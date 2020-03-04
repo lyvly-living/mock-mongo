@@ -1,0 +1,53 @@
+{
+  "name": "@lyvly/mock-mongo",
+  "version": "0.0.1",
+  "description": "Mocks a Mongo Replica Set",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "prettier": "prettier --write '**/*.{js,json}'",
+    "build": "babel src --out-dir dist",
+    "test": "echo \"Error: no test specified\"",
+    "prepublishOnly": "rm -rf dist && yarn build",
+    "postversion": "git push --tags"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn prettier && yarn lint && yarn test",
+      "pre-commit": "yarn prettier && yarn lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyvly-living/mock-mongo.git"
+  },
+  "author": "Ray Parkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lyvly-living/mock-mongo/issues"
+  },
+  "homepage": "https://github.com/lyvly-living/mock-mongo#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "mongodb": "^3.5.4",
+    "mongodb-memory-server": "^6.3.2"
+  }
+}
