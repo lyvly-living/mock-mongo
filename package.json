@@ -12,7 +12,8 @@
     "lint": "eslint --ext .js .",
     "prettier": "prettier --write '**/*.{js,json}'",
     "build": "babel src --out-dir dist",
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "prepublishOnly": "rm -rf dist && yarn build"
   },
   "husky": {
     "hooks": {
