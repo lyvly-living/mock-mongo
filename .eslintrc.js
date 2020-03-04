@@ -11,9 +11,4 @@ module.exports = {
   env: {
     'jest/globals': true,
   },
-  settings: {
-    'import/resolver': {
-      'babel-module': {},
-    },
-  },
 };
