@@ -5,7 +5,14 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint --ext .js .",
+    "prettier": "prettier --write '**/*.{js,json}'",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn prettier && yarn lint && yarn test",
+      "pre-commit": "yarn prettier && yarn lint"
+    }
   },
   "repository": {
     "type": "git",
@@ -25,6 +32,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^23.8.1",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
     "prettier": "^1.19.1"
   }
 }
