@@ -4,6 +4,10 @@
   "description": "Mock ",
   "main": "dist/index.js",
   "module": "src/index.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "scripts": {
     "lint": "eslint --ext .js .",
     "prettier": "prettier --write '**/*.{js,json}'",
