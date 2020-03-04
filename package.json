@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "Mock ",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
     "lint": "eslint --ext .js .",
     "prettier": "prettier --write '**/*.{js,json}'",
+    "build": "babel src --out-dir dist",
     "test": "echo \"Error: no test specified\""
   },
   "husky": {
@@ -25,6 +27,7 @@
   },
   "homepage": "https://github.com/lyvly-living/mock-mongo#readme",
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.8.6",
     "babel-eslint": "^10.1.0",
