@@ -1,6 +1,6 @@
 {
   "name": "@lyvly/mock-mongo",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Mocks a Mongo Replica Set",
   "main": "dist/index.js",
   "module": "src/index.js",
