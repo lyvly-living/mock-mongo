@@ -3,6 +3,13 @@ import { MongoClient } from 'mongodb';
 
 export const MockMongo = {
   mongo: null,
+  get() {
+    return this.mongo;
+  },
+
+  set(mongo) {
+    this.mongo = mongo;
+  },
 
   async start(options) {
     this.mongo = new MongoMemoryReplSet({

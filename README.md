@@ -39,3 +39,13 @@ To get a native mongo collection to test against:
 ```
 await MockMongo.getCollection(databaseName, collectionName)
 ```
+
+To get the mongo memory server instance
+```
+MockMongo.get()
+```
+
+To set a new mongo memory server instance
+```
+MockMongo.set(mongoInstance)
+```
