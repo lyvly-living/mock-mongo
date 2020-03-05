@@ -3,7 +3,7 @@ import { MongoClient } from 'mongodb';
 
 export const MockMongo = {
   mongo: null,
-  startDb: async (options) => {
+  async startDb(options) {
     this.mongo = new MongoMemoryReplSet({
       debug: false,
       replSet: {
@@ -16,15 +16,15 @@ export const MockMongo = {
     return true;
   },
 
-  getUri: () => {
+  getUri() {
     return this.mongo.getUri();
   },
 
-  stopDb: () => {
+  stopDb() {
     return this.mongo.stop();
   },
 
-  getCollection: async (databaseName, collectionName) => {
+  async getCollection(databaseName, collectionName) {
     const connections = await MongoClient.connect(await this.mongo.getConnectionString(), {
       useNewUrlParser: true,
       useUnifiedTopology: true,
