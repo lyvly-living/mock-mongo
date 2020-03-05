@@ -9,13 +9,21 @@
     "src/*"
   ],
   "scripts": {
+    "------ LINTING ------": "",
     "lint": "eslint --ext .js .",
     "prettier": "prettier --write '**/*.{js,json}'",
-    "build": "babel src --out-dir dist",
+    "------ TEST ------": "",
     "test": "echo \"Error: no test specified\"",
-    "prepublishOnly": "rm -rf dist && yarn build",
+    "------ BUILD/RELEASE ------": "",
+    "build": "babel src --out-dir dist",
+    "release:major": "npm version major && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:patch": "npm version patch && npm publish",
+    "------ NPM Scripts ------": "",
+    "preversion": "yarn lint && yarn test",
+    "postversion": "git push --follow-tags",
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "postversion": "git push --follow-tags"
+    "prepublishOnly": "rm -rf dist && yarn build"
   },
   "husky": {
     "hooks": {
