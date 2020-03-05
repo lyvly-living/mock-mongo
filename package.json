@@ -14,7 +14,7 @@
     "build": "babel src --out-dir dist",
     "test": "echo \"Error: no test specified\"",
     "prepublishOnly": "rm -rf dist && yarn build",
-    "version": "auto-changelog && git add CHANGELOG.md",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
     "postversion": "git push --tags"
   },
   "husky": {
