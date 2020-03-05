@@ -3,7 +3,8 @@ import { MongoClient } from 'mongodb';
 
 export const MockMongo = {
   mongo: null,
-  async startDb(options) {
+
+  async start(options) {
     this.mongo = new MongoMemoryReplSet({
       debug: false,
       replSet: {
@@ -13,14 +14,15 @@ export const MockMongo = {
     });
 
     await this.mongo.waitUntilRunning();
-    return true;
+
+    return this.mongo;
   },
 
   getUri() {
     return this.mongo.getUri();
   },
 
-  stopDb() {
+  stop() {
     return this.mongo.stop();
   },
 

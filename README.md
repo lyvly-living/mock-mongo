@@ -12,7 +12,7 @@ import { MockMongo } from '@lyvly/mock-mongo
 
 To start the db:
 ```
-await MockMongo.startDb([options])
+await MockMongo.start([options])
 ```
 By default, we use the following `mongodb-memory-server` [options](https://github.com/nodkz/mongodb-memory-server/blob/master/README.md#available-options-for-mongomemoryserver):
 ```
@@ -21,7 +21,9 @@ By default, we use the following `mongodb-memory-server` [options](https://githu
     storageEngine: 'wiredTiger',
   },
 ```
-You can override this by passing your own options to `startDb`.
+You can override this by passing your own options to `start`.
+
+`start` returns the mongo memory server instance.
 
 To get the connection uri:
 ```
@@ -30,10 +32,10 @@ await MockMongo.getUri()
 
 To stop the DB:
 ```
-await MockMongo.stopDb()
+await MockMongo.stop()
 ```
 
 To get a native mongo collection to test against:
 ```
-await getCollection(databaseName, collectionName)
+await MockMongo.getCollection(databaseName, collectionName)
 ```
