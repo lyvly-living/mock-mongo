@@ -7,8 +7,6 @@ module.exports = {
           node: '10.15.0',
         },
         modules: 'commonjs',
-        useBuiltIns: 'usage',
-        corejs: 3,
       },
     ],
   ],
