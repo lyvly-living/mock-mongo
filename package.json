@@ -14,6 +14,7 @@
     "build": "babel src --out-dir dist",
     "test": "echo \"Error: no test specified\"",
     "prepublishOnly": "rm -rf dist && yarn build",
+    "version": "auto-changelog && git add CHANGELOG.md",
     "postversion": "git push --tags"
   },
   "husky": {
@@ -36,6 +37,7 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.8.6",
+    "auto-changelog": "^1.16.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
